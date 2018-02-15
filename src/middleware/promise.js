@@ -13,6 +13,8 @@ export default store => next => action => {
 
         store.dispatch(newAction)
     });
+
+    return action.payload;
 }
 
 //es5 version

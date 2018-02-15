@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {getAllTodos} from "../actions";
 
 class Home extends Component {
@@ -21,7 +22,12 @@ class Home extends Component {
                     <h1>ITSSA TO DO LIST</h1>
                     <p>Now with podracing!</p>
                 </div>
-                <ul className='list-group'>
+
+                <div className='row justify-content-end my-4'>
+                    <Link className='btn btn-outline-danger' to='/add-item'>Add Item</Link>
+                </div>
+
+                <ul className='row list-group'>
                     {listItems}
                 </ul>
             </div>
