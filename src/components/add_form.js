@@ -17,17 +17,12 @@ class AddForm extends Component {
     }
 
     handleAddItem(values){
-        console.log('adddddding', values);
-
         this.props.addItem(values).then(()=> {
-            console.log('item addeds');
-
             this.props.history.push('/')
         });
     }
 
     render() {
-        console.log()
         return(
             <form onSubmit={this.props.handleSubmit(this.handleAddItem.bind(this))}>
                 <h1 className='text-center'>adddddd</h1>

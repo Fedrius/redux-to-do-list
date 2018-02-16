@@ -2,7 +2,7 @@ import types from './types';
 import axios from 'axios';
 
 const BASE_URL = 'http://api.reactprototypes.com';
-const API_KEY = '?key=testuser1234';
+const API_KEY = '?key=notauniquekey';
 
 export function getAllTodos(){
     const request = axios.get(`${BASE_URL}/todos${API_KEY}`);
@@ -29,4 +29,22 @@ export function addItem(item){
         type: types.ADD_ITEM,
         payload: request
     };
+}
+
+export function deleteItem(id){
+    const request = axios.delete(`${BASE_URL}/todos/${id + API_KEY}`);
+
+    return {
+        type: types.DELETE_ITEM,
+        payload: request
+    }
+}
+
+export function toggleComplete(id){
+    const request = axios.put(`${BASE_URL}/todos/${id + API_KEY}`);
+
+    return {
+        type: types.TOGGLE_COMPLETE,
+        payload: request
+    }
 }
